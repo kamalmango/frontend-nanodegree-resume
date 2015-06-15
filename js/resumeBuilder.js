@@ -114,6 +114,9 @@ var displaywork = function() {
 
 		var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
 		$(".work-entry:last").append(formattedDescription);
+
+		var formattedLocation = HTMLworkLocation.replace("%data%", work.jobs[job].location);
+		$(".work-entry:last").prepend(formattedLocation);
 	}
 }
 
