@@ -114,7 +114,7 @@ function initializeMap() {
 
   // This next line makes `map` a new Google Map JavaScript Object and attaches it to
   // <div id="map">, which is appended as part of an exercise late in the course.
-  map = new google.maps.Map(document.querySelector('#mapDiv'), mapOptions);
+  map = new google.maps.Map(document.querySelector('#map'), mapOptions);
 
 
   /*

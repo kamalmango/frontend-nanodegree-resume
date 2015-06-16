@@ -14,58 +14,6 @@ var bio = {
 	"biopic" : "images/fry.jpg"
 };
 
-
-var work = {
-	"jobs" : [
-		{
-			"employer" : "Clarabridge",
-			"title" : "Technical Support Analyst",
-			"location" : "Reston, VA",
-			"dates" : "2014 - Present",
-			"description" : "lorem ipsum dolor sit amet etc etc etc."
-		}
-	]
-}
-
-var education = {
-	"schools" : [
-		{
-			"name" : "Virginia Tech",
-			"location" : "Blacksburg, VA",
-			"majors" : ["ISE"],
-			"degree" : "BS",
-			"dates" : "2009-2014",
-			"url" : "www.vt.edu"
-		}
-	],
-	"onlineCourses" : [
-		{
-			"title" : "CS 101",
-			"school" : "Udacity",
-			"dates" :"2015",
-			"url" : "www.udacity.com"
-		}
-	]
-}
-
-var projects = {
-	"projects" : [
-		{
-			"title" : "Project 1",
-			"dates" : "2009",
-			"description" : "lorem ipsum dolor sit amet etc etc etc.",
-			"images" : ["http://placehold.it/387x315", "http://placehold.it/387x315"]	
-		},
-		{
-			"title" : "Project 2",
-			"dates" : "2010",
-			"description" : "lorem ipsum dolor sit amet etc etc etc.",
-			"images" : ["http://placehold.it/387x315", "http://placehold.it/387x315"]
-		}
-	]
-}
-
-
 bio.display = function() {
 	var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
 	$("#header").prepend(formattedRole);
@@ -98,7 +46,20 @@ bio.display = function() {
 	}
 }
 
-bio.display();
+
+
+
+var work = {
+	"jobs" : [
+		{
+			"employer" : "Clarabridge",
+			"title" : "Technical Support Analyst",
+			"location" : "Reston, VA",
+			"dates" : "2014 - Present",
+			"description" : "lorem ipsum dolor sit amet etc etc etc."
+		}
+	]
+}
 
 var displaywork = function() {
 	for (job in work.jobs) {
@@ -120,45 +81,29 @@ var displaywork = function() {
 	}
 }
 
-displaywork();
 
 
-/*
-function inName(name) {
-	name = name.trim().split(" ");
-	console.log(name);
-	name[1] = name[1].toUpperCase();
-	name[0] = name[0].slice(0,1).toUpperCase() + name[0].slice(1).toLowerCase();
-	return name[0] + " " + name[1];
+
+var education = {
+	"schools" : [
+		{
+			"name" : "Virginia Tech",
+			"location" : "Blacksburg, VA",
+			"majors" : ["ISE"],
+			"degree" : "BS",
+			"dates" : "2009-2014",
+			"url" : "www.vt.edu"
+		}
+	],
+	"onlineCourses" : [
+		{
+			"title" : "CS 101",
+			"school" : "Udacity",
+			"dates" :"2015",
+			"url" : "www.udacity.com"
+		}
+	]
 }
-*/
-
-
-//$("#main").append(internationalizeButton);
-
-projects.display = function() {  
- 	for (project in projects.projects) {
- 		$("#projects").append(HTMLprojectStart);
-
- 		var formattedTitle = HTMLprojectTitle.replace("%data%", projects.projects[project].title);
- 		$(".project-entry:last").append(formattedTitle);
-
- 		var formattedDates = HTMLprojectDates.replace("%data%", projects.projects[project].dates);
- 		$(".project-entry:last").append(formattedDates);
-
- 		var formattedDescription = HTMLprojectDescription.replace("%data%", projects.projects[project].description);
- 		$(".project-entry:last").append(formattedDescription);
-
- 		if (projects.projects[project].images.length > 0) {
- 			for (image in projects.projects[project].images) {
- 				var formattedImage = HTMLprojectImage.replace("%data%", projects.projects[project].images[image]);
- 				$(".project-entry:last").append(formattedImage);
- 			}
- 		}
- 	}
-}
-
-projects.display();
 
 education.display = function() {
 	for (school in education.schools) {
@@ -197,6 +142,57 @@ education.display = function() {
 	}
 }
 
-education.display();
 
-$("mapDiv").append(googleMap);
+
+var projects = {
+	"projects" : [
+		{
+			"title" : "Project 1",
+			"dates" : "2009",
+			"description" : "lorem ipsum dolor sit amet etc etc etc.",
+			"images" : ["http://placehold.it/387x315", "http://placehold.it/387x315"]	
+		},
+		{
+			"title" : "Project 2",
+			"dates" : "2010",
+			"description" : "lorem ipsum dolor sit amet etc etc etc.",
+			"images" : ["http://placehold.it/387x315", "http://placehold.it/387x315"]
+		}
+	]
+}
+
+projects.display = function() {  
+ 	for (project in projects.projects) {
+ 		$("#projects").append(HTMLprojectStart);
+
+ 		var formattedTitle = HTMLprojectTitle.replace("%data%", projects.projects[project].title);
+ 		$(".project-entry:last").append(formattedTitle);
+
+ 		var formattedDates = HTMLprojectDates.replace("%data%", projects.projects[project].dates);
+ 		$(".project-entry:last").append(formattedDates);
+
+ 		var formattedDescription = HTMLprojectDescription.replace("%data%", projects.projects[project].description);
+ 		$(".project-entry:last").append(formattedDescription);
+
+ 		if (projects.projects[project].images.length > 0) {
+ 			for (image in projects.projects[project].images) {
+ 				var formattedImage = HTMLprojectImage.replace("%data%", projects.projects[project].images[image]);
+ 				$(".project-entry:last").append(formattedImage);
+ 			}
+ 		}
+ 	}
+}
+
+
+
+
+
+bio.display();
+displaywork();
+education.display();
+projects.display();
+
+$("#mapDiv").append(googleMap);
+
+
+
