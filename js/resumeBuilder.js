@@ -9,8 +9,8 @@ var bio = {
 		"twitter" : "@kamalmango",
 		"location" : "Reston, VA"
 	},
-	"welcomeMessage" : "lorem ipsum dolor sit amet etc etc etc.",
-	"skills" : ["awesomeness", "delivering things", "cryogenic sleep", "saving the universe"],
+	"welcomeMessage" : "Hi! I'm Kamal Mango. I'm a technology enthusiast who likes to solve real-world problems",
+	"skills" : ["Python", "HTML", "CSS", "JavaScript", "SQL"],
 	"biopic" : "images/fry.jpg"
 };
 
@@ -56,7 +56,7 @@ var work = {
 			"title" : "Technical Support Analyst",
 			"location" : "Reston, VA",
 			"dates" : "2014 - Present",
-			"description" : "lorem ipsum dolor sit amet etc etc etc."
+			"description" : "Build and fix webscrapers to gather customer data for analysis"
 		}
 	]
 }
@@ -100,7 +100,7 @@ var education = {
 			"title" : "CS 101",
 			"school" : "Udacity",
 			"dates" :"2015",
-			"url" : "www.udacity.com"
+			"url" : "https://www.udacity.com/course/intro-to-computer-science--cs101"
 		}
 	]
 }
@@ -137,7 +137,7 @@ education.display = function() {
 		var formattedDates = HTMLonlineDates.replace("%data%", education.onlineCourses[course].dates);
 		$(".education-entry:last").append(formattedDates);
 
-		var formattedURL = HTMLonlineURL.replace("%data%", education.onlineCourses[course].url);
+		var formattedURL = HTMLonlineURL.replace("#", education.onlineCourses[course].url).replace("%data%", education.onlineCourses[course].url);
 		$(".education-entry:last").append(formattedURL);
 	}
 }
