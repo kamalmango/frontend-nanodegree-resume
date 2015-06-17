@@ -44,7 +44,7 @@ bio.display = function() {
 			$("#skills").append(formattedSkill);
 		}
 	}
-}
+};
 
 
 
@@ -59,9 +59,9 @@ var work = {
 			"description" : "Build and fix webscrapers to gather customer data for analysis"
 		}
 	]
-}
+};
 
-var displaywork = function() {
+work.display = function() {
 	for (job in work.jobs) {
 		$("#workExperience").append(HTMLworkStart);
 
@@ -79,7 +79,7 @@ var displaywork = function() {
 		var formattedLocation = HTMLworkLocation.replace("%data%", work.jobs[job].location);
 		$(".work-entry:last").prepend(formattedLocation);
 	}
-}
+};
 
 
 
@@ -103,7 +103,7 @@ var education = {
 			"url" : "https://www.udacity.com/course/intro-to-computer-science--cs101"
 		}
 	]
-}
+};
 
 education.display = function() {
 	for (school in education.schools) {
@@ -140,7 +140,7 @@ education.display = function() {
 		var formattedURL = HTMLonlineURL.replace("#", education.onlineCourses[course].url).replace("%data%", education.onlineCourses[course].url);
 		$(".education-entry:last").append(formattedURL);
 	}
-}
+};
 
 
 
@@ -159,7 +159,7 @@ var projects = {
 			"images" : ["http://placehold.it/387x315", "http://placehold.it/387x315"]
 		}
 	]
-}
+};
 
 projects.display = function() {  
  	for (project in projects.projects) {
@@ -181,14 +181,14 @@ projects.display = function() {
  			}
  		}
  	}
-}
+};
 
 
 
 
 
 bio.display();
-displaywork();
+work.display();
 education.display();
 projects.display();
 
